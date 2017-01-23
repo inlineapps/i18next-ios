@@ -257,7 +257,7 @@ static dispatch_once_t gOnceToken;
     
     if (lang.length) {
         // Split languageCode and countryCode
-        NSRange dashRange = [lang rangeOfCharacterFromSet:[NSCharacterSet characterSetWithCharactersInString:@"-_"]];
+        NSRange dashRange = [lang rangeOfCharacterFromSet:[NSCharacterSet characterSetWithCharactersInString:@"_"]];
         if (dashRange.location != NSNotFound) {
             NSString* languageCode = [lang substringToIndex:dashRange.location].lowercaseString;
             NSString* countryCode = [lang substringFromIndex:dashRange.location + dashRange.length];
